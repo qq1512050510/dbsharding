@@ -7,6 +7,7 @@ import org.apache.shardingsphere.api.config.sharding.TableRuleConfiguration;
 import org.apache.shardingsphere.api.config.sharding.strategy.InlineShardingStrategyConfiguration;
 import org.apache.shardingsphere.shardingjdbc.api.ShardingDataSourceFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -28,7 +29,7 @@ public class ShardingJdbcConfig {
         dataSource1.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource1.setUrl("jdbc:mysql://localhost:3306/order_db?useUnicode=true");
         dataSource1.setUsername("root");
-        dataSource1.setPassword("mysql");
+        dataSource1.setPassword("success");
         Map<String, DataSource> result = new HashMap<>();
         result.put("m1", dataSource1);
         return result;

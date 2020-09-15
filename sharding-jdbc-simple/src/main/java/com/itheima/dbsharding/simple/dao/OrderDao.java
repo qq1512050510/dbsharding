@@ -41,7 +41,7 @@ public interface OrderDao {
             " #{id} " +
             " </foreach>" +
             "</script>")
-    List<Map> selectOrderbyIds(@Param("orderIds") List<Long> orderIds);
+    List<Map> selectOrderByIds(@Param("orderIds") List<Long> orderIds);
 
     /**
      * 根据id列表和用户id查询订单
@@ -58,5 +58,5 @@ public interface OrderDao {
             " </foreach>" +
             " and user_id = #{userId} " +
             "</script>")
-    List<Map> selectOrderbyUserAndIds(@Param("userId") Long userId,@Param("orderIds") List<Long> orderIds);
+    List<Map> selectOrderByUserAndIds(@Param("userId") Long userId,@Param("orderIds") List<Long> orderIds);
 }

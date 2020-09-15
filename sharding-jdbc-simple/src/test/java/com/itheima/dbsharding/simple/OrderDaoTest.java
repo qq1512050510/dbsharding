@@ -32,6 +32,11 @@ public class OrderDaoTest {
     DictDao dictDao;
 
     @Test
+    public void testInsertOrderTest(){
+        orderDao.insertOrder(new BigDecimal(11),1L,"SUCCESS");
+    }
+
+    @Test
     public void testInsertOrder(){
         for(int i=1;i<20;i++){
             orderDao.insertOrder(new BigDecimal(i),4L,"SUCCESS");
@@ -39,12 +44,12 @@ public class OrderDaoTest {
     }
 
     @Test
-    public void testSelectOrderbyIds(){
+    public void testSelectOrderByIds(){
         List<Long> ids = new ArrayList<>();
-        ids.add(374121806463762432L);
-        ids.add(373897037306920961L);
+        ids.add(512632386727444481L);
+        ids.add(512634857470296066L);
 
-        List<Map> maps = orderDao.selectOrderbyIds(ids);
+        List<Map> maps = orderDao.selectOrderByIds(ids);
         System.out.println(maps);
     }
 
@@ -54,7 +59,7 @@ public class OrderDaoTest {
         ids.add(374121806463762432L);
 //        ids.add(373897037306920961L);
 
-        List<Map> maps = orderDao.selectOrderbyUserAndIds(4L,ids);
+        List<Map> maps = orderDao.selectOrderByUserAndIds(4L,ids);
         System.out.println(maps);
     }
 
